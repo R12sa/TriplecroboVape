@@ -310,11 +310,11 @@ local function createMobileButton(buttonapi, position)
 end
 
 local function downloadFile(path, func)
-	if not isfile(path) then
-		createDownloader(path)
-		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/wrealaero/AeroV4/'..readfile('newvape/profiles/commit.txt')..'/'..select(1, path:gsub('newvape/', '')), true)
-		end)
+    if not isfile(path) then
+        createDownloader(path)
+        local suc, res = pcall(function()
+            return game:HttpGet('https://raw.githubusercontent.com/R12sa/TriplecroboVape/main/'..select(1, path:gsub('newvape/', '')), true)
+        end)
 		if not suc or res == '404: Not Found' then
 			error(res)
 		end
@@ -5866,8 +5866,8 @@ general:CreateButton({
 		shared.vapereload = true
 		if shared.VapeDeveloper then
 			loadstring(readfile('newvape/loader.lua'), 'loader')()
-		else
-			loadstring(game:HttpGet('https://raw.githubusercontent.com/wrealaero/AeroV4/'..readfile('newvape/profiles/commit.txt')..'/loader.lua', true))()
+        else
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/R12sa/TriplecroboVape/main/loader.lua', true))()
 		end
 	end,
 	Tooltip = 'This will set your profile to the default settings of Vape'
@@ -5886,7 +5886,7 @@ general:CreateButton({
 		if shared.VapeDeveloper then
 			loadstring(readfile('newvape/loader.lua'), 'loader')()
 		else
-			loadstring(game:HttpGet('https://raw.githubusercontent.com/wrealaero/AeroV4/'..readfile('newvape/profiles/commit.txt')..'/loader.lua', true))()
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/R12sa/TriplecroboVape/main/loader.lua', true))()
 		end
 	end,
 	Tooltip = 'Reloads vape for debugging purposes'
@@ -5992,9 +5992,9 @@ guipane:CreateDropdown({
 			writefile('newvape/profiles/gui.txt', val)
 			shared.vapereload = true
 			if shared.VapeDeveloper then
-				loadstring(readfile('newvape/loader.lua'), 'loader')()
-			else
-				loadstring(game:HttpGet('https://raw.githubusercontent.com/wrealaero/AeroV4/'..readfile('newvape/profiles/commit.txt')..'/loader.lua', true))()
+                loadstring(readfile('newvape/loader.lua'), 'loader')()
+            else
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/R12sa/TriplecroboVape/main/loader.lua', true))()
 			end
 		end
 	end,
