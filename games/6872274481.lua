@@ -5636,7 +5636,7 @@ end)
 run(function()
     local BedProtector
     local currentLayer = 0
-
+ 
     local function getBedNear()
         local localPosition = entitylib.isAlive and entitylib.character.HumanoidRootPart.Position or Vector3.zero
         for _, v in pairs(collectionService:GetTagged('bed')) do
@@ -5645,7 +5645,7 @@ run(function()
             end
         end
     end
-
+ 
     local function getCurrentBlock()
         local item = store.inventory.inventory.hand
         if item then
@@ -5656,7 +5656,7 @@ run(function()
         end
         return nil
     end
-
+ 
     local function getPyramid(size, grid)
         local positions = {}
         for h = size, 0, -1 do
@@ -5669,7 +5669,7 @@ run(function()
         end
         return positions
     end
-
+ 
     local function findBrokenPositions(bed)
         local broken = {}
         for i = 0, currentLayer do
@@ -5681,7 +5681,7 @@ run(function()
         end
         return broken
     end
-
+ 
     BedProtector = vape.Categories.World:CreateModule({
         Name = 'BedProtector',
         Function = function(callback)
@@ -5721,7 +5721,7 @@ run(function()
         Tooltip = 'Creates perfect bed protection layers'
     })
 end)
-				
+
 run(function()
 	local ChestSteal
 	local Range
